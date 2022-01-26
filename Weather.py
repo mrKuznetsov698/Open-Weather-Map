@@ -33,6 +33,27 @@ class Observation:
     def get_coordinates(self): #широта, долгота
         return int(self.resp['coord']['lat']), int(self.resp['coord']['lot'])
 
+    def get_wind_speed(self):
+        return int(self.resp['wind']['speed'])
+
+    def get_wind_deg(self):
+        return int(self.resp['wind']['deg'])
+
+    def get_clouds_all(self):
+        return int(self.resp['clouds']['all'])
+
+    def get_rain_volume_1h(self):
+        return int(self.resp['rain']['1h'])
+
+    def get_rain_volume_3h(self):
+        return int(self.resp['rain']['3h'])
+
+    def get_snow_volume_1h(self):
+        return int(self.resp['snow']['1h'])
+
+    def get_snow_volume_3h(self):
+        return int(self.resp['snow']['3h'])
+
 
 class Weather:
     def __init__(self, key: str, lang='en', units='metric'):
